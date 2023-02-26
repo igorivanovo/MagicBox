@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class MagicBox<T> {
     private int length;
-    // public T item;
     private T[] items;
 
     public MagicBox(int length) {
@@ -19,10 +18,10 @@ public class MagicBox<T> {
         return items;
     }
 
-    Random random = new Random();
+    protected Random random = new Random();
 
 
-    boolean add(T item) {
+    public boolean add(T item) {
         for (int i = 0; i < length; i++) {
             if (items[i] == null) {
                 items[i] = item;
@@ -33,6 +32,7 @@ public class MagicBox<T> {
         return false;
 
     }
+
 
     public T pick() {
         for (int i = 0; i < length; i++) {
